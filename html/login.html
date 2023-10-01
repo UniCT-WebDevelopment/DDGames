@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" type="image/x-icon" href="img/logoNS.ico">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="fbody" id="fbody">
+        <div class="top-bar">
+            <div class="menu-button" id="menu-button">
+                <img src="../img/menu.png" width="30" height="30">
+            </div>
+            <div class="menu-popup" id="menu-popup" style="display: none">
+                <div class="menu-icons">
+                     <img src="../img/home.png" width="25" height="25">
+                     <a href="/">Home</a>
+                </div>
+                <div class="menu-icons">
+                     <img src="../img/discord.png" width="25" height="25">
+                     <a href="https://discord.com/invite/JfeZu9fUeA" target="_blank">Join us</a>
+                </div>
+                <div class="menu-icons">
+                     <img src="../img/mail.png" width="25" height="25">
+                     <a onclick="copyText()">Contact us</a>
+                </div>
+             </div>
+            <div class="toolbar">
+                <span class="homeButton">
+                    <a href="/">HOME</a>
+                </span>
+                <span>
+                    <a href="https://discord.com/invite/JfeZu9fUeA" target="_blank">JOIN US</a>
+                </span>
+                <span style="cursor:pointer">
+                    <a onclick="copyText()">CONTACT US</a>
+                </span>
+            </div>
+            <div class="welcome">Welcome to DDGAMES</div>
+            <div class="upload-write" id="upload-write">
+            </div>
+        </div>
+        <div class="dashboard" id="dashboard">
+            <!-- Login -->
+            <div class="wrapper">
+                <div class="card-switch">
+                    <label class="switch">
+                        <input class="toggle" type="checkbox">
+                        <span class="slider"></span>
+                        <span class="card-side"></span>
+                        <div class="flip-card__inner">
+                            <div class="flip-card__front">
+                                <div class="title">Log in</div>
+                                <form class="flip-card__form">
+                                    <input type="email" placeholder="Email" name="email" class="flip-card__input"
+                                        id="emailLogin">
+                                    <input type="password" placeholder="Password" name="password"
+                                        class="flip-card__input" id="passwordLogin">
+                                    <div class="already-taken" id="wrong-credentials" style="top:223px"></div>
+                                    <button class="flip-card__btn" id="login-button">Login</button>
+                                </form>
+                            </div>
+                            <div class="flip-card__back">
+                                <div class="title">Sign up</div>
+                                <form id="signup-form" class="flip-card__form">
+                                    <input type="name" placeholder="Username" class="flip-card__input"
+                                        id="userRegistrazione">
+                                    <input type="email" placeholder="Email" name="email" class="flip-card__input"
+                                        id="emailRegistrazione">
+                                    <input type="password" placeholder="Password" name="password"
+                                        class="flip-card__input" id="passwordRegistrazione">
+                                    <div class="already-taken" id="general-error"></div>
+                                    <button class="flip-card__btn" id="signup-button">Sign up</button>
+                                </form>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="sonic">
+            <img src="img/sonic.gif" width="150px">
+        </div>
+        <div>
+            <img src="img/supermario.gif" class="mario">
+        </div>
+    </div>
+    <script src="js/signup.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

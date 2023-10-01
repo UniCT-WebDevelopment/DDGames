@@ -1,0 +1,154 @@
+.fbody {
+    overflow: auto;
+}
+
+.fbody .wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.fbody .wrapper .gameInfo {
+    margin-top: 20px;
+    flex: 1;
+}
+
+.fbody .wrapper .gameInfo .gameTitle {
+    font-family: 'FragmentCore', sans-serif;
+    font-size: 30px;
+    color: #7C0C84;
+}
+
+.fbody .wrapper .gameInfo .gameAuthor {
+    font-family: 'FragmentCore', sans-serif;
+    font-size: 15px;
+    color: rgb(50, 50, 50);
+    margin-top: 5px;
+}
+
+.fbody .wrapper .gameInfo .gameDescription {
+    font-family: 'FragmentCore', sans-serif;
+    font-size: 18px;
+    color: rgb(25, 25, 25);
+    margin-top: 10px;
+}
+
+.fbody .wrapper .gameReviews {
+    margin-top: 20px;
+    flex: 1;
+}
+
+.fbody .wrapper .gameReviews .showReviews {
+    max-height: 320px;    
+    overflow-y: auto;
+}
+
+.writeReview {
+    width: 80%;
+    height: 80px;
+    outline: none;
+    resize: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sendButton {
+    padding: 7px 10px;
+    border-radius: 50px;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 10px;
+    transition: all .5s ease;
+}
+
+.sendButton:hover {
+    letter-spacing: 2px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.sendButton:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(3px);
+    transition: 100ms;
+}
+
+.rating-container {
+    display: flex;
+    justify-content: start;
+}
+
+.rating:not(:checked) > input {
+    appearance: none;
+    position: absolute;
+}
+
+.rating:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    color: #666;
+}
+
+.rating:not(:checked) > label:before {
+    content: '★';
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #ff9e0b;
+}
+
+.rating > input:checked ~ label {
+    color: #ffa723;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #e58e09;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-stars {
+    color: #ff9e0b;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 4px;
+}
+
+@media only screen and (min-width: 1025px) {
+    .fbody .wrapper { 
+        flex-direction: row;
+    }
+    .fbody .wrapper .game {
+        font-family: 'FragmentCore', sans-serif;
+        font-size: 30px;
+        flex: 2;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .fbody .wrapper {
+        flex-direction: column;
+    }
+
+    .game {
+        width: 100%;
+        min-height: 800px;
+    }
+}

@@ -1,0 +1,144 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="icon" type="image/x-icon" href="img/logoNS.ico">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="fbody" id="fbody">
+        <div class="top-bar">
+            <div class="menu-button" id="menu-button">
+                <img src="../img/menu.png" width="30" height="30">
+            </div>
+            <div class="menu-popup" id="menu-popup" style="display: none">
+                <div class="menu-icons">
+                     <img src="../img/home.png" width="25" height="25">
+                     <a href="/">Home</a>
+                </div>
+                <div class="menu-icons">
+                     <img src="../img/discord.png" width="25" height="25">
+                     <a href="https://discord.com/invite/JfeZu9fUeA" target="_blank">Join us</a>
+                </div>
+                <div class="menu-icons">
+                     <img src="../img/mail.png" width="25" height="25">
+                     <a onclick="copyText()">Contact us</a>
+                </div>
+                <div id="items-bottom" class="menu-popup-bottom">
+                    <hr width="100%" style="margin-bottom: -5px;">
+                    <div class="username-popup" id="username"></div>
+                    <hr width="100%" style="margin-top: -5px; margin-bottom: 20px;">
+                 </div>
+             </div>
+            <div class="toolbar">
+                <span class="homeButton">
+                    <a href="/">HOME</a>
+                </span>
+                <span>
+                    <a href="https://discord.com/invite/JfeZu9fUeA" target="_blank">JOIN US</a>
+                </span>
+                <span style="cursor:pointer">
+                    <a onclick="copyText()">CONTACT US</a>
+                </span>
+            </div>
+            <div class="welcome">Welcome to DDGAMES</div>
+            <div class="upload-write" id="upload-write">
+                <div id="upload-a-game" class="upload-a-game saltello-upload">upload a game »</div>
+                <button class="user" id="user">
+                    <img src="img/user.png" width="30px" height="30px">
+                </button>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <span>
+                        <img src="img/pfp.png" width="23px" height="23px" style="position: relative; top: 6px;">
+                        &nbsp;
+                        <span id="username-dropdown"></span>
+                        <hr>
+                    </span>
+                    <div class="dropdown-button" onclick="profile()">Profile</div>
+                    <div class="dropdown-button" onclick="logout()">Logout</div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard" id="dashboard">
+            <span class="your-games" id="your-games">
+                <div class="cardTitle">YOUR GAMES</div>
+                <hr style="color: #323232; border: 1px solid;">
+                <div class="your-games-container" id="your-games-container"></div>
+            </span>
+            <span class="upload-game" id="upload-game">
+                <div class="cardTitle">UPLOAD A GAME</div>
+                <hr style="color: #323232; border: 1px solid;">
+                <form class="form-upload-a-game">
+                    <div>
+                        <div class="title-write"><label for="title-input">Title</label></div>
+                        <input type="text" id="title-input" class="title-input" name="title"
+                            placeholder="max 20 characters">
+                    </div>
+                    <div>
+                        <div class="description-write"><label for="description-input">Description</label></div>
+                        <textarea id="description-input" class="description-input" name="description"
+                            style="width: 80%; height: 100px;" maxlength="400"
+                            placeholder="max 400 characters"></textarea>
+                    </div>
+                    <div>
+                        <div class="category-write">Category</div>
+                        <select class="category-select" id="category" name="category">
+                            <option value="" disabled selected>Select an option</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="select-write">Select an image</div>
+                        <input type="file" id="select-image" class="select-image" name="files" accept="image/*">
+                    </div>
+                    <div>
+                        <div class="upload-game-write">Upload your p5js file</div>
+                        <input type="file" id="upload-p5js" class="upload-p5js" name="files" accept=".js">
+                    </div>
+                    <div>
+                        <div class="upload-data-write">Upload your data folder</div>
+                        <div class="upload-data-little-write">(must be named "data")</div>
+                        <input type="file" id="upload-data" class="upload-data" name="files" webkitdirectory="true"
+                            multiple>
+                    </div>
+
+                    <div class="container-button">
+                        <button id="upload-button" class="upload-button">Upload</button>
+                    </div>
+
+                </form>
+            </span>
+            <span class="your-reviews" id="your-reviews">
+                <div class="cardTitle">YOUR REVIEWS</div>
+                <hr style="color: #323232; border: 1px solid;" width="100%">
+                <div style="overflow-y: auto;">
+                    <div class="cardsContainer" id="cards-container" style="margin: 5px;">
+                        <div id="show-reviews" class="showProfileReviews">
+                            <!-- qui vanno le recensioni-->
+                        </div>
+                    </div>
+                </div>
+            </span>
+            <div class="folder" style="z-index: 1; margin-left: 15px;" id="folder-1">
+                <img src="../img/game2.png" width="30" height="30">
+            </div>
+            <div class="folder" style="z-index: 0; margin-left: 64px;" id="folder-2">
+                <img src="../img/upload-big-arrow.png" width="25" height="25">
+            </div>
+            <div class="folder" style="z-index: 0; margin-left: 112px;" id="folder-3">
+                <img src="../img/reviewB.png" width="30" height="30">
+            </div>
+        </div>
+    </div>
+    <script src="js/Card.js"></script>
+    <script src="js/cardReview.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

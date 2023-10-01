@@ -1,0 +1,293 @@
+@keyframes saltelloCategories {
+    0% {
+        top: 0;
+    }
+
+    30% {
+        top: -3px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.top-3-title {
+    font-family: 'Hey-Comic', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 8px;
+    background: radial-gradient(circle, #7C0C84 20%, rgba(0, 0, 0, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.biggerTitle {
+    font-family: 'FragmentCore', sans-serif;
+    font-size: 22px;
+    margin: 5px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1025px) {
+    
+    .fbody {
+        overflow: auto;
+        position: relative;
+    }
+
+    .container-categories {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        min-width: 300px;
+    }
+
+    .fbody .categories {
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.4);
+        position: relative;
+        width: 200px;
+        font-size: 30px;
+        font-family: 'FragmentCore', sans-serif;
+        color: rgb(70, 70, 70);
+        padding: 12px;
+        user-select: none;
+        border: 2px solid rgb(70, 70, 70);
+        box-shadow: 4px 4px #323232;
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100vh - 300px);
+        overflow-y: hidden;
+    }
+
+    .fbody .categories .list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        font-size: 25px;
+        padding-left: 10px;
+    }
+
+    .fbody .categories .list li {
+        list-style: none;
+    }
+
+    .fbody .categories .list li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .fbody .categories .list li a:hover {
+        text-shadow: 2px 2px 4px var(--clr);
+        transition: 0.2s;
+        position: relative;
+        animation: saltelloCategories 0.5s linear;
+    }
+
+    .dashboard {
+        display: flex;
+        height: calc(100vh - 110px);
+        position: relative;
+        align-items: center;
+    }
+
+    .wrapper-container-top-3 {
+        width: 100%;
+    }
+
+    .container-top-3 {
+        width: 100%;
+        height: 512px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .firstone {
+        border: 2px solid rgb(70, 70, 70);
+        border-radius: 5px 0 0 5px;
+        width: 339px;
+        border-right: 0;
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 2px 4px #323232;
+    }
+
+    .secondone {
+        border: 2px solid rgb(70, 70, 70);
+        width: 339px;
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0.5px 4px #323232;
+    }
+
+    .thirdone {
+        border: 2px solid rgb(70, 70, 70);
+        border-radius: 0 5px 5px 0;
+        width: 339px;
+        border-left: 0;
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 4px 4px #323232, 0px 4px #323232;
+    }
+
+    .biggerCard {
+        margin: 10px;
+        height: 440px;
+        /* border: 2px solid rgb(0, 0, 128); */
+        border-radius: 10px 10px 0 0;
+        position: relative;
+    }
+
+    .biggerCard:hover {
+        transition: all 0.1s linear;
+        transform: scale(1.02);
+        cursor: pointer;
+    }
+
+    .biggerDescription {
+        font-family: 'FragmentCore', sans-serif;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .littleCounter {
+        font-size: 11px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        user-select: none;
+    }
+
+    .fbody .dropdown-menu {
+        top: 65px;
+        right: 25px;
+    }
+
+    .outer-bigger-card {
+        height: 450px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .container-categories {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .fbody .categories {
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.4);
+        position: relative;
+        font-size: 30px;
+        font-family: 'FragmentCore', sans-serif;
+        color: rgb(70, 70, 70);
+        padding: 12px;
+        user-select: none;
+        border: 2px solid rgb(70, 70, 70);
+        box-shadow: 4px 4px #323232;
+        text-align: center;
+    }
+
+    .fbody .categories .list {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        gap: 20px;
+        font-size: 25px;
+        flex-wrap: wrap;
+    }
+
+    .fbody .categories .list li {
+        list-style: none;
+    }
+
+    .fbody .categories .list li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .fbody .categories .list li a:hover {
+        text-shadow: 2px 2px 4px var(--clr);
+        transition: 0.2s;
+        position: relative;
+        animation: saltelloCategories 0.5s linear;
+    }
+
+    .wrapper-container-top-3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        padding: 30px;
+    }
+
+    .container-top-3 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .firstone {
+        border: 2px solid rgb(70, 70, 70);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 4px 4px #323232;
+    }
+
+    .secondone {
+        border: 2px solid rgb(70, 70, 70);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 4px 4px #323232;
+    }
+
+    .thirdone {
+        border: 2px solid rgb(70, 70, 70);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 4px 4px #323232;
+    }
+
+    .biggerCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        max-width: 450px;
+        padding: 10px;
+        padding-top: 0;
+        gap: 5px;
+    }
+
+    .biggerDescription {
+        font-family: 'FragmentCore', sans-serif;
+        font-size: 20px;
+        margin-top: 5px;
+    }
+
+    .eye {
+        position: static;
+    }
+
+    .reviewsStar {
+        position: relative;
+        bottom: 0;
+    }
+
+    .reviewsColoredStars {
+        position: absolute;
+    }
+
+    .littleCounter {
+        font-size: 18px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        user-select: none;
+    }
+
+}

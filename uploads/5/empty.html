@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loading {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: 1s spin linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+        
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"
+        integrity="sha512-M7uzkKVt12bO/ClDOwaTk0AUwDPmJzjxri/KQKft2cisI6q3zJ4KxX3IfSQXF9Z6WU6NNW67JAljgWrA4WiiOA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body id="body">
+    <div class="loading" id="loading" style="display: flex;">
+        <img src="../../img/loading.png" width="30" height="30">
+    </div>
+    <main id='main' style="display: none; width: 100%; height:100%; justify-content: center; align-items: center; position: relative;"></main>
+    <script type="text/javascript" id="game-script"></script>
+    <script>
+        //serve per associare lo script al suo gioco
+        const gameScript = document.getElementById('game-script');
+        const string = window.location.href.substr(0, window.location.href.lastIndexOf('/'));
+        gameScript.src = string.substr(string.lastIndexOf('/') + 1) + '.js';
+        var canvasWidth;
+        var canvasHeight;
+        window.setTimeout( () => { //non appena viene aperto
+            const bodyWidth = parseInt(window.getComputedStyle(document.getElementById('body')).width);
+            const bodyHeight = parseInt(window.getComputedStyle(document.getElementById('body')).height);
+            const canvas = document.getElementById('defaultCanvas0');
+            canvasWidth = parseInt(canvas.style.width);
+            canvasHeight = parseInt(canvas.style.height);
+            if (canvasHeight > canvasWidth) {
+                    let scale = bodyHeight / canvasHeight;
+                    if (canvasWidth * scale > bodyWidth) {
+                        scale = bodyWidth / canvasWidth;
+                    }
+                    canvas.style.width = canvasWidth * scale;
+                    canvas.style.height = canvasHeight * scale;
+                } else {
+                    let scale = bodyWidth / canvasWidth;
+                    if (canvasHeight * scale > bodyHeight) {
+                        scale = bodyHeight / canvasHeight;
+                    }
+                    canvas.style.width = canvasWidth * scale;
+                    canvas.style.height = canvasHeight * scale;
+                }
+            canvas.style.top = 0;
+            canvas.style.left = 0;
+            canvas.style.position = 'static';
+            document.getElementById('main').style.display = 'flex';
+            document.getElementById('loading').style.display = 'none';
+        }, 1000)
+        let resizeTimer;
+        window.addEventListener('resize', () => { //non appena viene fatta la resize
+            document.getElementById('main').style.display = 'none';
+            document.getElementById('loading').style.display = 'flex';
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                const bodyWidth = parseInt(window.getComputedStyle(document.getElementById('body')).width);
+                const bodyHeight = parseInt(window.getComputedStyle(document.getElementById('body')).height);
+                const canvas = document.getElementById('defaultCanvas0');
+                if (canvasHeight > canvasWidth) {
+                    let scale = bodyHeight / canvasHeight;
+                    if (canvasWidth * scale > bodyWidth) {
+                        scale = bodyWidth / canvasWidth;
+                    }
+                    canvas.style.width = canvasWidth * scale;
+                    canvas.style.height = canvasHeight * scale;
+                } else {
+                    let scale = bodyWidth / canvasWidth;
+                    if (canvasHeight * scale > bodyHeight) {
+                        scale = bodyHeight / canvasHeight;
+                    }
+                    canvas.style.width = canvasWidth * scale;
+                    canvas.style.height = canvasHeight * scale;
+                }
+                document.getElementById('main').style.display = 'flex';
+                document.getElementById('loading').style.display = 'none';
+            }, 200);
+        })
+    </script>
+</body>
+
+</html>

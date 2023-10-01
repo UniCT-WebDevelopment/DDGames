@@ -1,0 +1,131 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDGames</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/game.css">
+    <link rel="icon" type="image/x-icon" href="../img/logoNS.ico">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+    <div class="fbody" id="fbody">
+        <div class="top-bar">
+            <div class="menu-button" id="menu-button">
+                <img src="../img/menu.png" width="30" height="30">
+            </div>
+            <div class="menu-popup" id="menu-popup" style="display: none">
+                <div class="menu-icons">
+                     <img src="../img/home.png" width="25" height="25">
+                     <a href="/">Home</a>
+                </div>
+                <div class="menu-icons">
+                     <img src="../img/discord.png" width="25" height="25">
+                     <a href="https://discord.com/invite/JfeZu9fUeA" target="_blank">Join us</a>
+                </div>
+                <div class="menu-icons">
+                     <img src="../img/mail.png" width="25" height="25">
+                     <a onclick="copyText()">Contact us</a>
+                </div>
+                <hr width="100%" style="margin-bottom: -5px;">
+                <div class="username-popup" id="username"></div><hr width="100%" style="margin-top: -5px;">
+             </div>
+            <div class="toolbar">
+                <span class="homeButton">
+                    <a href="/">HOME</a>
+                </span>
+                <span>
+                    <a href="https://discord.com/invite/JfeZu9fUeA" target="_blank">JOIN US</a>
+                </span>
+                <span style="cursor:pointer">
+                    <a onclick="copyText()">CONTACT US</a>
+                </span>
+            </div>
+            <div class="welcome">Welcome to DDGAMES</div>
+            <div class="upload-write" id="upload-write">
+                <div id="upload-a-game" class="upload-a-game saltello-upload">upload a game »</div>
+                <button class="user" id="user">
+                    <img src="../img/user.png" width="30px" height="30px">
+                </button>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <span>
+                        <img src="../img/pfp.png" width="23px" height="23px" style="position: relative; top: 6px;">
+                        &nbsp;
+                        <span id="username-dropdown"></span>
+                        <hr>
+                    </span>
+                    <div class="dropdown-button" onclick="profile()">Profile</div>
+                    <div class="dropdown-button" onclick="logout()">Logout</div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard" id="dashboard">
+            <div class="wrapper">
+                <div class="gameInfo">
+                    <div
+                        style="margin: 35px; padding: 10px; border: 2px solid #323232; border-radius: 5px; background-color: rgba(255, 255, 255, 0.4); box-shadow: 2px 2px #323232;">
+                        <div class="gameTitle" id="game-title"></div>
+                        <div class="gameAuthor" id="game-author"></div>
+                        <div class="gameDescription" id="game-description"></div>
+                    </div>
+                </div>
+                <div class="game" id="game" style="display: flex; justify-content: center;">
+                    <iframe id="game-url" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="gameReviews">
+                    <div
+                        style="margin: 35px; padding: 10px; border: 2px solid #323232; border-radius: 5px; background-color: rgba(255, 255, 255, 0.4); box-shadow: 2px 2px #323232; max-height: 500px; display: flex; flex-direction: column;">
+                        <div class="showReviews">
+                            <div class="cardsContainer" id="cards-container">
+                                <!-- qui vengono aggiunti elementi con js-->
+                            </div>
+                        </div>
+                        <hr width="100%">
+                        <div class="filter-buttons">
+                            <button class="filter-stars" id="filter-star-5">★★★★★</button>
+                            <button class="filter-stars" id="filter-star-4">★★★★</button>
+                            <button class="filter-stars" id="filter-star-3">★★★</button>
+                            <button class="filter-stars" id="filter-star-2">★★</button>
+                            <button class="filter-stars" id="filter-star-1">★</button>
+                            <button class="filter-stars" style="color: black" id="filter-all">&#8682;</button>
+                        </div>
+                        <hr width="100%">
+                        <div style="margin-left: 2px;">
+                            <form>
+                                <div class="rating-container">
+                                    <div class="rating">
+                                        <input value="5" name="rate" id="star5" type="radio">
+                                        <label title="text" for="star5"></label>
+                                        <input value="4" name="rate" id="star4" type="radio">
+                                        <label title="text" for="star4"></label>
+                                        <input value="3" name="rate" id="star3" type="radio" checked="">
+                                        <label title="text" for="star3"></label>
+                                        <input value="2" name="rate" id="star2" type="radio">
+                                        <label title="text" for="star2"></label>
+                                        <input value="1" name="rate" id="star1" type="radio">
+                                        <label title="text" for="star1"></label>
+                                    </div>
+                                </div>
+                                <div><textarea class="writeReview" id="writeReview" placeholder="write a review here"
+                                        name="textReview" maxlength="300"></textarea>
+                                    <div style="display: flex; justify-content: end; position:relative; top: 4px; ">
+                                        <button class="sendButton" id="send-button"><img src="../img/send.png"
+                                                width="15" height="15"></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/cardReview.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/game.js"></script>
+</body>
+
+</html>

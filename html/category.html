@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/category.css">
+    <link rel="icon" type="image/x-icon" href="img/logoNS.ico">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body id="body">
+    <div class="fbody" id="fbody">
+        <div class="top-bar">
+            <div class="menu-button" id="menu-button">
+                <img src="../img/menu.png" width="30" height="30">
+            </div>
+            <div class="menu-popup" id="menu-popup" style="display: none">
+                <div class="menu-icons">
+                     <img src="../img/home.png" width="25" height="25">
+                     <a href="/">Home</a>
+                </div>
+                <div class="menu-icons">
+                     <img src="../img/discord.png" width="25" height="25">
+                     <a href="https://discord.com/invite/JfeZu9fUeA" target="_blank">Join us</a>
+                </div>
+                <div class="menu-icons">
+                     <img src="../img/mail.png" width="25" height="25">
+                     <a onclick="copyText()">Contact us</a>
+                </div>
+                <hr width="100%" style="margin-bottom: -5px;">
+                <div class="username-popup" id="username"></div><hr width="100%" style="margin-top: -5px;">
+             </div>
+            <div class="toolbar">
+                <span class="homeButton">
+                    <a href="/">HOME</a>
+                </span>
+                <span>
+                    <a href="https://discord.com/invite/JfeZu9fUeA" target="_blank">JOIN US</a>
+                </span>
+                <span style="cursor:pointer">
+                    <a onclick="copyText()">CONTACT US</a>
+                </span>
+            </div>
+            <div class="welcome">Welcome to DDGAMES</div>
+            <div class="upload-write" id="upload-write">
+                <div id="upload-a-game" class="upload-a-game saltello-upload">upload a game »</div>
+                <button class="user" id="user">
+                    <img src="../img/user.png" width="30px" height="30px">
+                </button>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <span>
+                        <img src="../img/pfp.png" width="23px" height="23px" style="position: relative; top: 6px;">
+                        &nbsp;
+                        <span id="username-dropdown"></span>
+                        <hr>
+                    </span>
+                    <div class="dropdown-button" onclick="profile()">Profile</div>
+                    <div class="dropdown-button" onclick="logout()">Logout</div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard" id="dashboard">
+            <div class="arcade" id="title-category"></div>
+            <div class="outer-db" id="outer-db">
+                <div class="internal-db" id="internal-db"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/Card.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/category.js"></script>
+</body>
+</html>

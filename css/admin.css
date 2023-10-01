@@ -1,0 +1,652 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(130,130,130,1) 0%, rgba(220,220,220,1) 25%, rgba(220,220,220,1) 75%, rgba(130,130,130,1) 100%);
+}
+
+.form-category {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-category div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-category label {
+    font-weight: bold;
+}
+
+.error {
+    color: #D01617;
+    font-size: 15px;
+}
+
+.inner-stars {
+    color: #ff9e0b;
+    position: absolute;
+    top: -3.2px;
+    overflow-x: hidden;
+    width: 0px;
+    user-select: none;  
+}
+
+.form-edit {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    border: 2px solid #808080;
+}
+
+.form-row {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding: 0px 50px 0px 50px;
+    gap: 100px;
+}
+
+.form-row input {
+    max-width: 250px;
+}
+
+.form-buttons {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    .form-row label {
+        text-align: center;
+        min-width: 150px;
+    }
+
+    .f-empty-body {
+        display: flex;
+        position: relative;
+        height: 100%;
+    }
+
+    .menu-phone {
+        display: none;
+    }
+
+    .f-empty-body .menu {
+        background-color: #303030;
+        width: 240px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        color: #cacaca;
+        padding-top: 50px;
+        justify-content: end;
+        min-height: 400px;
+    }
+
+    .f-empty-body .menu .top-menu {
+        height: 100%;
+    }
+
+    .f-empty-body .menu .element-list {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        user-select: none;
+        cursor: pointer;
+        transition: 0.1s linear;
+    }
+    
+    .element-list-clicked {
+        background-color: #606060;
+    }
+
+    .f-empty-body .main-dashboard {
+        background: linear-gradient(90deg, rgba(130,130,130,1) 0%, rgba(220,220,220,1) 25%, rgba(220,220,220,1) 75%, rgba(130,130,130,1) 100%);
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+        overflow-y: auto;
+    }
+
+    .f-empty-body .main-dashboard .dashboard {
+        height: 100%;
+    }
+
+    .f-empty-body .main-dashboard .dashboard .inner-dashboard {
+        display: flex;
+        gap: 20px;
+    }
+
+    .inner-dashboard-elements {
+        border: 1px solid gray;
+        flex: 0 0 calc(33.33% - 10px);
+        height: fit-content;
+        margin-bottom: 40px;
+        background-color: white;
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    .inner-dashboard-elements .title {
+        text-align: center;
+        font-weight: 550;
+    }
+
+    .inner-dashboard-elements .views {
+        display: flex;
+        height: 80%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .menu-icons {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        margin-right: 20px;
+        margin-top: -5px;
+    }
+
+    .recommended-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .recommended-card .img {
+        height: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .datas div {
+        margin-bottom: 5px;
+    }
+
+    .datas .bold-infos {
+        font-weight: bold;
+        position: relative;
+    }
+
+    .filter-categories {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .inner-games {
+        background-color: #f0f0f0;
+        height: calc(100vh - 192px);
+        border: 2px solid #808080;
+        border-top: 0;
+        border-radius: 2px;
+        overflow-y: auto;
+    }
+
+    .header {
+        display: flex;
+        height: 30px;
+    }
+
+    .header-element {
+        color: rgb(6, 6, 197);
+        background: linear-gradient(0deg,  rgb(200, 200, 200) 0%, rgb(230, 230, 230)100%); 
+        border: 1px solid #505050;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0px 0px  1px black;
+    }
+
+    .db-row {
+        height: 60px;
+        display: flex; 
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .db-row div {
+        overflow-y: auto;
+        text-align: center;
+    }
+
+    .delWrite {
+        color: rgb(7, 7, 132);
+        user-select: none;
+    }
+
+    .delWrite:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .inner-users {
+        background-color: #f0f0f0;
+        height: calc(100vh - 152px);
+        border: 2px solid #808080;
+        border-top: 0;
+        border-radius: 2px;
+        overflow-y: auto;
+    }
+
+    .inner-reviews {
+        background-color: #f0f0f0;
+        height: calc(100vh - 192px);
+        border: 2px solid #808080;
+        border-top: 0;
+        border-radius: 2px;
+        overflow-y: auto;
+    }
+
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+
+    .form-row label {
+        text-align: center;
+        min-width: 150px;
+    }
+
+    .f-empty-body {
+        display: flex;
+        position: relative;
+        height: 100%;
+    }
+
+    .menu-phone {
+        display: none;
+    }
+
+    .f-empty-body .menu {
+        background-color: #303030;
+        width: 60px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        color: #cacaca;
+        padding-top: 50px;
+        justify-content: end;
+        min-height: 400px;
+    }
+
+    .f-empty-body .menu .top-menu {
+        height: 100%;
+    }
+
+    .f-empty-body .menu .element-list {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        user-select: none;
+        cursor: pointer;
+        transition: 0.1s linear;
+    }
+    
+    .element-list-clicked {
+        background-color: #606060;
+    }
+
+    .f-empty-body .main-dashboard {
+        background: linear-gradient(90deg, rgba(130,130,130,1) 0%, rgba(220,220,220,1) 25%, rgba(220,220,220,1) 75%, rgba(130,130,130,1) 100%);
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+        overflow-y: auto;
+    }
+
+    .f-empty-body .main-dashboard .dashboard {
+        height: 100%;
+    }
+
+    .f-empty-body .main-dashboard .dashboard .inner-dashboard {
+        display: flex;
+        gap: 15px;
+    }
+
+    .inner-dashboard-elements {
+        border: 1px solid gray;
+        flex: 0 0 calc(33.33% - 10px);
+        height: fit-content;
+        margin-bottom: 40px;
+        background-color: white;
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    .inner-dashboard-elements .title {
+        text-align: center;
+        font-weight: 550;
+    }
+
+    .inner-dashboard-elements .views {
+        display: flex;
+        height: 80%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .menu-icons {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        margin-right: 20px;
+        margin-top: -5px;
+    }
+
+    .recommended-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .recommended-card .img {
+        height: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .datas div {
+        margin-bottom: 5px;
+    }
+
+    .datas .bold-infos {
+        font-weight: bold;
+        position: relative;
+    }
+
+    .filter-categories {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .inner-games {
+        background-color: #f0f0f0;
+        height: calc(100vh - 192px);
+        border: 2px solid #808080;
+        border-top: 0;
+        border-radius: 2px;
+        overflow-y: auto;
+    }
+
+    .header {
+        display: flex;
+        height: 30px;
+    }
+
+    .header-element {
+        color: rgb(6, 6, 197);
+        background: linear-gradient(0deg,  rgb(200, 200, 200) 0%, rgb(230, 230, 230)100%); 
+        border: 1px solid #505050;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0px 0px  1px black;
+    }
+
+    .db-row {
+        height: 60px;
+        display: flex; 
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .db-row div {
+        overflow-y: auto;
+        text-align: center;
+    }
+
+    .delWrite {
+        color: rgb(7, 7, 132);
+        user-select: none;
+    }
+
+    .delWrite:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .inner-users {
+        background-color: #f0f0f0;
+        height: calc(100vh - 152px);
+        border: 2px solid #808080;
+        border-top: 0;
+        border-radius: 2px;
+        overflow-y: auto;
+    }
+
+    .inner-reviews {
+        background-color: #f0f0f0;
+        height: calc(100vh - 192px);
+        border: 2px solid #808080;
+        border-top: 0;
+        border-radius: 2px;
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .form-row label {
+        width: 100px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .f-empty-body {
+        display: flex;
+        position: relative;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .menu-phone {
+        position: absolute;
+        padding: 5px;
+        background-color: #303030;
+        user-select: none;
+    }
+
+    .menu-phone:hover {
+        cursor: pointer;
+    }
+
+    .outer-menu {
+        position: absolute;
+        display: none;
+        width: 240px;
+        height: 100%;
+    }
+
+    .f-empty-body .menu {
+        background-color: #303030;
+        width: 240px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        color: #cacaca;
+        padding-top: 50px;
+        justify-content: end;
+        min-height: 400px;
+        position: absolute;
+    }
+
+    .f-empty-body .menu .top-menu {
+        height: 100%;
+    }
+
+    .f-empty-body .menu .element-list {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        user-select: none;
+        cursor: pointer;
+        transition: 0.1s linear;
+    }
+    
+    .element-list-clicked {
+        background-color: #606060;
+    }
+
+    .f-empty-body .main-dashboard {
+        background: linear-gradient(90deg, rgba(130,130,130,1) 0%, rgba(220,220,220,1) 25%, rgba(220,220,220,1) 75%, rgba(130,130,130,1) 100%);
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+        overflow-y: auto;
+    }
+
+    .f-empty-body .main-dashboard .dashboard {
+        height: 100%;
+    }
+
+    .f-empty-body .main-dashboard .dashboard .inner-dashboard {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .inner-dashboard-elements {
+        border: 1px solid gray;
+        flex: 0 0 calc(33.33% - 10px);
+        height: fit-content;
+        margin-bottom: 40px;
+        background-color: white;
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    .inner-dashboard-elements .title {
+        text-align: center;
+        font-weight: 550;
+    }
+
+    .inner-dashboard-elements .views {
+        display: flex;
+        height: 80%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .menu-icons {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        margin-right: 20px;
+        margin-top: -5px;
+    }
+
+    .recommended-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .recommended-card .img {
+        height: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .datas div {
+        margin-bottom: 5px;
+    }
+
+    .datas .bold-infos {
+        font-weight: bold;
+        position: relative;
+    }
+
+    .filter-categories {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .inner-games {
+        background-color: #f0f0f0;
+        height: calc(100vh - 187px);
+        border: 2px solid #808080;
+        border-top: 0;
+        border-radius: 2px;
+        width: 600px;
+    }
+
+    .header {
+        display: flex;
+        height: 30px;
+    }
+
+    .header-element {
+        color: rgb(6, 6, 197);
+        background: linear-gradient(0deg,  rgb(200, 200, 200) 0%, rgb(230, 230, 230)100%); 
+        border: 1px solid #505050;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0px 0px  1px black;
+    }
+
+    .db-row {
+        height: 60px;
+        display: flex; 
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .db-row div {
+        overflow-y: auto;
+        text-align: center;
+    }
+
+    .delWrite {
+        color: rgb(7, 7, 132);
+        user-select: none;
+    }
+
+    .delWrite:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .inner-users {
+        background-color: #f0f0f0;
+        height: calc(100vh - 147px);
+        border: 2px solid #808080;
+        border-top: 0;
+        border-radius: 2px;
+        width: 600px;
+    }
+
+    .inner-reviews {
+        background-color: #f0f0f0;
+        height: calc(100vh - 187px);
+        border: 2px solid #808080;
+        border-top: 0;
+        border-radius: 2px;
+        width: 600px;
+    }
+
+    .container-scroll-phone {
+        overflow-y: scroll;
+    }
+}

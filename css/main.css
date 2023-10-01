@@ -1,0 +1,620 @@
+@font-face {
+    font-family: 'Hey-Comic';
+    src: url('fonts/Hey\ Comic.ttf');
+}
+
+@font-face {
+    font-family: 'FragmentCore';
+    src: url('fonts/TypoSlab_Irregular_Demo\ \(2\).ttf');
+}
+
+@font-face {
+    font-family: 'Arista';
+    src: url('fonts/verdana.ttf'); 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.cardReview .stars {
+    font-size: 18px;
+    color: #666;
+    position: relative;
+    user-select: none;
+}
+
+.cardReview .stars .coloredstars {
+    font-size: 18px;
+    color: #ff9e0b;
+    position: absolute;
+    top: 0px;
+    overflow-x: hidden;
+    width: 0px;
+    user-select: none;
+}
+
+.from {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.userReview {
+    font-size: 13px;
+}
+
+.dashboard {
+    background-color: rgb(169, 211, 211);
+    border-radius: 5px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+
+@media only screen and (min-width: 1025px) {
+    
+    .fbody {
+        background-color: rgb(169, 211, 211);
+        border: 20px solid rgb(0, 43, 61);
+        height: calc(100vh - 40px);
+        border-radius: 30px;
+        box-shadow: 0 0 0 13px rgb(0, 43, 61);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fbody .top-bar {
+        display: flex;
+        height: 65px;
+    }
+
+    .fbody .top-bar .toolbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex: 1;
+        font-family: 'Arista', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        user-select: none;
+    }
+
+    .toolbar span {
+        margin: 2px;
+        text-align: center;
+    }
+
+    .toolbar a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .top-bar .welcome {
+        display: flex;
+        flex: 2;
+        justify-content: center;
+        align-items: center;
+        font-size: 45.5px;     
+        font-family: 'Hey-Comic', sans-serif;
+        letter-spacing: 2px;
+        color: rgb(0, 140, 180);
+        animation: animate-text 5s linear infinite;
+        user-select: none;
+        background-color: rgb(0, 43, 61);
+        border-radius: 0 0 5px 5px;
+    }
+
+    .top-bar .upload-write {
+        display: flex;
+        flex: 1;
+        justify-content: end;
+        align-items: center;
+        user-select: none;
+        font-family: 'Arista', sans-serif;
+    }
+
+    @keyframes animate-text {
+        25% {
+            color: rgb(90, 40, 150)
+        }
+
+        50% {
+            color: rgb(80, 200, 200);
+        }
+
+        75% {
+            color: rgb(60, 100, 200);
+        }
+
+    }
+
+    .fbody .user {
+        border-radius: 100%;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        height: 45px;
+        margin-right: 10px;
+    }
+
+
+    .fbody .user:hover {
+        transition: 0.5s;
+        background-color: rgba(255, 255, 255, 0.595);
+    }
+
+    .fbody .toolbar a:hover {
+        transition: 0.3s;
+        text-shadow: 0px 0px 5px rgb(0, 43, 61);
+    }
+
+    .popup {
+        position: absolute;
+        left: 40%;
+        right: 40%;
+        bottom: 30px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        color: transparent;
+        font-family: 'Arista', sans-serif;
+        animation: animatePopup 2s linear;
+        user-select: none;
+    }
+
+    @keyframes animatePopup {
+        0% {
+            background-color: transparent;
+            color: transparent;
+        }
+
+        10% {
+            background-color: rgb(230, 230, 165);
+            color: black;
+        }
+
+        90% {
+            background-color: rgb(230, 230, 165);
+            color: black;
+        }
+
+        100% {
+            background-color: transparent;
+            color: transparent;
+        }
+    }
+
+    .welcome-user {
+        margin-right: 5px;
+    }
+
+    .welcome-user:hover {
+        animation: pulse 0.5s linear;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.1);
+        }
+    }
+
+    .fbody .dropdown-menu .dropdown-button:hover {
+        cursor: pointer;
+        text-shadow: 0px 0px 2px rgb(70, 70, 70);
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        font-family: 'FragmentCore', sans-serif;
+        background-color: rgb(255, 255, 255);
+        width: fit-content;
+        text-align: end;
+        border-radius: 8px;
+        user-select: none;
+        top: 80px;
+        right: 45px;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid #323232;
+        box-shadow: 4px 4px #323232;
+        z-index: 2;
+    }
+
+    .card {
+        border: 1px solid rgb(0, 0, 128);
+        border-radius: 10px;
+        width: 192px;
+        height: 230px;
+        min-height: 230px;
+        margin: 7px;
+        margin-top: 8px;
+        margin-bottom: 20px;
+        background-color: rgba(255, 255, 255, 0.6);
+        position: relative;
+        box-shadow: 2px 2px #323232;
+    }
+
+    .card .img {
+        width: 192px;
+        height: 144px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .card:hover {
+        transition: all 0.1s linear;
+        transform: scale(1.05);
+    }
+
+    .card .title {
+        font-family: 'FragmentCore', sans-serif;
+        font-size: 18px;
+        margin: 5px;
+        text-align: center;
+    }
+
+    .container-category {
+        display: flex;
+        justify-content: center;
+    }
+
+    .saltello-upload {
+        position: absolute;
+        animation: saltelloUpload 2s linear infinite;
+    }
+
+    @keyframes saltelloUpload {
+        0% {
+            right: 65px;
+        }
+
+        25% {
+            right: 70px;
+        }
+
+        50% {
+            right: 68px;
+        }
+
+        75% {
+            right: 75px;
+        }
+
+        100% {
+            right: 65px;
+        }
+    }
+
+    .cardReview {
+        width: fit-content;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.653);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 14px;
+        margin-right: 5px;
+        box-shadow: 1.5px 1.5px #323232;
+    }
+
+    .eye {
+        position: absolute;
+        right: 5px;
+        bottom: 15px;
+    }
+
+    .counter {
+        font-size: 13px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        user-select: none;
+    }
+
+    .reviewsStar {
+        font-size: 18px;
+        color: #666;
+        position: absolute;
+        user-select: none;
+        bottom: 12px;
+    }
+
+    .reviewsColoredStars {
+        font-size: 18px;
+        color: #ff9e0b;
+        position: absolute;
+        top: 0px;
+        overflow-x: hidden;
+        width: 0px;
+        user-select: none;
+    }
+
+    .cardsContainer {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        margin-bottom: 2px;
+    }
+    
+    .menu-button {
+        display: none;
+    }
+
+    .menu-popup {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgb(0, 43, 61);
+    }
+
+    .fbody {
+        border: 13px solid rgb(0, 43, 61);
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: rgb(0, 43, 61);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fbody .top-bar {
+        display: flex;
+        height: 60px;
+        min-height: 60px;
+        background-color: rgb(0, 43, 61);
+        align-items: center;
+    }
+
+    .toolbar {
+        display: none;
+    }
+
+    .upload-write {
+        display: none;
+    }
+
+    .welcome {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-family: 'Hey-Comic', sans-serif;
+        letter-spacing: 2px;
+        color: rgb(0, 140, 180);
+        font-size: clamp(16px, 6vw, 45.5px);
+        margin-left: -30px;
+        animation: animate-text 5s linear infinite;
+    }
+
+    @keyframes animate-text {
+        25% {
+            color: rgb(90, 40, 150)
+        }
+
+        50% {
+            color: rgb(80, 200, 200);
+        }
+
+        75% {
+            color: rgb(60, 100, 200);
+        }
+
+    }
+
+    .menu-button {
+        user-select: none;
+        z-index: 4;
+    }
+
+    .menu-button:hover {
+        cursor: pointer;
+    }
+
+    .menu-popup {
+        position: absolute;
+        display: none;
+        background-color: rgb(0, 43, 61);
+        color: white;
+        top: 68px;
+        height: calc(100vh - 80px);
+        flex-direction: column;
+        font-family: 'Arista', sans-serif;
+        gap: 30px;
+        font-size: 28px;
+        padding: 5px;
+        padding-top: 35px;
+        padding-right: 10px;
+        z-index: 2;
+        overflow-y: auto;
+    }
+
+    .menu-popup-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: 100%;
+        justify-content: end;
+    }
+
+    .menu-icons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        user-select: none;
+    }
+
+    .username-popup {
+        display: flex;
+        align-items: center;
+        user-select: none;
+        font-size: 22px;
+    }
+
+    .menu-icons:hover {
+        cursor: pointer;
+        transition: 0.3s;
+        text-shadow: 0px 0px 5px rgb(232, 222, 223);
+    }
+
+    .menu-icons img {
+        margin-top: -5px;
+    }
+
+    .menu-icons a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .popup {
+        position: absolute;
+        left: 20%;
+        right: 20%;
+        bottom: 30px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        color: transparent;
+        font-family: 'Arista', sans-serif;
+        animation: animatePopup 2s linear;
+        user-select: none;
+        font-size: 20px;
+        z-index: 3;
+    }
+
+    @keyframes animatePopup {
+        0% {
+            background-color: transparent;
+            color: transparent;
+        }
+
+        10% {
+            background-color: rgb(230, 230, 165);
+            color: black;
+        }
+
+        90% {
+            background-color: rgb(230, 230, 165);
+            color: black;
+        }
+
+        100% {
+            background-color: transparent;
+            color: transparent;
+        }
+    }
+
+    .card {
+        border: 1px solid rgb(0, 0, 128);
+        border-radius: 10px;
+        width: 182px;
+        height: 217px;
+        min-height: 230px;
+        margin: 7px;
+        margin-top: 8px;
+        margin-bottom: 20px;
+        background-color: rgba(255, 255, 255, 0.6);
+        position: relative;
+        box-shadow: 2px 2px #323232;
+    }
+
+    .card:hover {
+        transition: all 0.1s linear;
+        transform: scale(1.05);
+    }
+
+    .card .title {
+        font-family: 'FragmentCore', sans-serif;
+        font-size: 18px;
+        margin: 5px;
+        text-align: center;
+    }
+
+    .card .img {
+        width: 180px;
+        height: 135px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .cardReview {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.653);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 14px;
+        margin-right: 5px;
+        box-shadow: 1.5px 1.5px #323232;
+    }
+
+    .container-category {
+        display: flex;
+        justify-content: center;
+    }
+
+    .eye {
+        position: absolute;
+        right: 5px;
+        bottom: 15px;
+    }
+
+    .counter {
+        font-size: 13px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        user-select: none;
+    }
+
+    .reviewsStar {
+        font-size: 18px;
+        color: #666;
+        position: absolute;
+        user-select: none;
+        bottom: 12px;
+    }
+
+    .reviewsColoredStars {
+        font-size: 18px;
+        color: #ff9e0b;
+        position: absolute;
+        top: 0px;
+        overflow-x: hidden;
+        width: 0px;
+        user-select: none;
+    }
+
+    .cardsContainer {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2px;
+        margin-left: 3px;
+    }
+
+    .menu-login:hover {
+        cursor: pointer;
+        text-shadow: 0px 0px 5px rgb(232, 222, 223);
+        user-select: none;
+    }
+
+}

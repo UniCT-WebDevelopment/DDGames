@@ -1,0 +1,81 @@
+.fbody .arcade {
+    display: flex;
+    justify-content: center;
+    font-family: 'Hey-Comic', sans-serif;
+    font-size: 35px;
+    margin: 0 auto; /*senza questo non si mette al centro*/
+    user-select: none;
+}
+
+.fbody .arcade:hover {
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		transform: scale3d(0.95, 1.05, 1);
+	}
+
+	75% {
+		transform: scale3d(1.05, 0.95, 1);
+	}
+
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+.fbody .dashboard {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.fbody .dashboard .outer-db {
+    border: 2px dashed;
+    height: calc(100vh - 155px);
+    border-radius: 10px;
+    margin: 10px; 
+}
+
+.fbody .dashboard .outer-db .internal-db {
+    margin: 15px;
+    padding-left: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 205px);
+    gap: 20px;
+}
+
+@media only screen and (min-width: 1025px) {
+    /* .fbody {
+        background-color: rgb(191, 203, 250);
+    } */
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .arcade {
+        width: 100%;
+    }
+}

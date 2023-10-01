@@ -1,0 +1,554 @@
+@keyframes myAnim2 {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50%,
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes myAnim {
+
+    0%,
+    100% {
+        transform: translateX(0%);
+        transform-origin: 50% 50%;
+    }
+
+    15% {
+        transform: translateX(-30px) rotate(-6deg);
+    }
+
+    30% {
+        transform: translateX(15px) rotate(6deg);
+    }
+
+    45% {
+        transform: translateX(-15px) rotate(-3.6deg);
+    }
+
+    60% {
+        transform: translateX(9px) rotate(2.4deg);
+    }
+
+    75% {
+        transform: translateX(-6px) rotate(-1.2deg);
+    }
+}
+
+
+@keyframes animateConfirm {
+    0% {
+        background-color: transparent;
+        color: transparent;
+    }
+
+    10%,
+    100% {
+        background-color: rgb(219, 65, 65);
+        color: white;
+    }
+}
+
+.delete:hover {
+    background-color: rgb(189, 53, 65);
+}
+
+.delete:active {
+    transform: scale(0.95);
+}
+
+.confirm-delete {
+    position: absolute;
+    left: 38%;
+    right: 38%;
+    top: 30px;
+    /* height: 45px; */
+    border-radius: 20px;
+    color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: animateConfirm 2s forwards linear;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    z-index: 3;
+}
+
+.delete-write {
+    position: relative;
+    margin-top: 2px;
+    font-size: 15px;
+    z-index: 3;
+}
+
+.button1 {
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+.button1:hover {
+    background-color: rgba(128, 128, 128, 0.425);
+}
+
+.title-write {
+    font-size: 20px;
+    font-family: 'Hey-Comic', sans-serif;
+    letter-spacing: 1px;
+    user-select: none;
+    color: #7C0C84;
+}
+
+.title-input {
+    border: 1px solid #323232;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px #323232;
+    background-color: transparent;
+    outline: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.description-write {
+    font-size: 20px;
+    font-family: 'Hey-Comic', sans-serif;
+    letter-spacing: 1px;
+    user-select: none;
+    color: #7C0C84;
+}
+
+.description-input {
+    border: 1px solid #323232;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px #323232;
+    background-color: transparent;
+    outline: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    resize: none;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.category-write {
+    font-size: 20px;
+    font-family: 'Hey-Comic', sans-serif;
+    letter-spacing: 1px;
+    user-select: none;
+    color: #7C0C84;
+}
+
+.category-select {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid #323232;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px #323232;
+    background-color: transparent;
+    user-select: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.select-write {
+    font-size: 20px;
+    font-family: 'Hey-Comic', sans-serif;
+    letter-spacing: 1px;
+    user-select: none;
+    color: #7C0C84;
+}
+
+.select-image {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid #323232;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px #323232;
+    background-color: transparent;
+    user-select: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.upload-game-write {
+    font-size: 20px;
+    font-family: 'Hey-Comic', sans-serif;
+    letter-spacing: 1px;
+    user-select: none;
+    color: #7C0C84;
+}
+
+.upload-p5js {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid #323232;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px #323232;
+    background-color: transparent;
+    user-select: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.upload-data-write {
+    font-size: 20px;
+    font-family: 'Hey-Comic', sans-serif;
+    letter-spacing: 1px;
+    user-select: none;
+    color: #7C0C84;
+}
+
+.upload-data-little-write {
+    font-size: 13px;
+    font-family: 'Hey-Comic', sans-serif;
+    color: #7C0C84;
+}
+
+.upload-data {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid #323232;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px #323232;
+    background-color: transparent;
+    user-select: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.container-button {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.upload-button {
+    padding: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    font-family: 'FragmentCore', sans-serif;
+    height: 34px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.upload-button:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.upload-button:active {
+    transform: translateY(-4px);
+}
+
+@media only screen and (min-width: 1025px) {
+
+    .fbody .dashboard {
+        width: 100%;
+        height: calc(100vh - 105px);
+        display: flex;
+        
+    }
+
+    .fbody .dashboard .your-games {
+        flex: 3;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin: 15px;
+        border-radius: 10px;
+        border: solid 2px rgb(0, 43, 61);
+        box-shadow: 4px 4px #323232;
+        overflow-y: hidden;
+    }
+
+    .fbody .dashboard .upload-game {
+        flex: 4;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin: 15px;
+        border-radius: 10px;
+        border: solid 2px rgb(0, 43, 61);
+        position: relative;
+        box-shadow: 4px 4px #323232;
+        overflow-y: hidden;
+    }
+
+    .fbody .dashboard .your-reviews {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin: 15px;
+        border-radius: 10px;
+        border: solid 2px rgb(0, 43, 61);
+        box-shadow: 4px 4px #323232;
+        overflow: hidden;
+    }
+
+    .cardTitle {
+        font-family: 'Hey-Comic', sans-serif;
+        font-size: 30px;
+        text-align: center;
+        position: relative;
+        top: 5px;
+        background: radial-gradient(circle, #7C0C84 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: myAnim 1s ease 0s 1 normal forwards;
+        user-select: none;
+    }
+
+
+
+    .fbody .dashboard .your-games .your-games-container {
+        width: 100%;
+        height: calc(100vh - 210px);
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: auto;
+        overflow-x: auto;
+        flex-direction: column;
+    }
+
+    .fbody .dashboard .your-games .page-navigation .pagination {
+        list-style: none;
+        text-align: center;
+        margin: 10px;
+        position: relative;
+        bottom: 6px;
+        margin-left: -40px;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .page-link {
+        font-size: 25px;
+        text-decoration: none;
+        color: black;
+        border: 1px solid rgba(0, 0, 0, 0.271);
+        /* padding: 8px; */
+        border-radius: 2px;
+        user-select: none;
+    }
+
+    .page-link:hover {
+        background-color: rgba(0, 0, 0, 0.196);
+        cursor: pointer;
+    }
+
+    .form-upload-a-game {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 200px);
+        overflow-y: auto;
+    }
+
+    .form-upload-a-game div {
+        flex: 1;
+        /* Gli elementi del form occupano tutto lo spazio verticale disponibile */
+        padding-left: 5px;
+    }
+
+
+    .delete {
+        color: white;
+        position: absolute;
+        margin-top: -190px;
+        margin-left: 5px;
+        font-size: 14px;
+        border: 1px solid rgb(232, 17, 35);
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        text-align: center;
+        background-color: rgb(232, 17, 35);
+        user-select: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .toolbar-admin {
+        display: flex;
+        font-family: 'Arista', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        user-select: none;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .toolbar-admin a {
+        text-decoration: none;
+        user-select: none;
+        color: black;
+    }
+
+    .toolbar-admin a:hover {
+        transition: 0.3s;
+        text-shadow: 0px 0px 5px rgb(0, 43, 61);
+    }
+
+    .showProfileReviews {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        max-height: 535px;
+        padding-bottom: 5px;
+        width: fit-content;
+    }
+
+    .folder {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .fbody .dashboard {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .dashboard .your-games {
+        height: calc(100vh - 200px);
+        width: 70%;
+        background-color: rgb(201, 226, 230);
+        margin: 63px;
+        border-radius: 10px;
+        border: solid 2px rgb(0, 43, 61);
+        box-shadow: 4px 4px #323232;
+        overflow-y: hidden;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .cardTitle {
+        font-family: 'Hey-Comic', sans-serif;
+        font-size: 30px;
+        text-align: center;
+        position: relative;
+        top: 5px;
+        background: radial-gradient(circle, #7C0C84 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: myAnim 1s ease 0s 1 normal forwards;
+        user-select: none;
+    }
+
+    .fbody .dashboard .your-games .your-games-container {
+        width: 100%;
+        height: calc(100vh - 270px);
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: auto;
+        justify-content: space-around;
+    }
+
+    .delete {
+        color: white;
+        position: absolute;
+        margin-top: -180px;
+        margin-left: 5px;
+        font-size: 14px;
+        border: 1px solid rgb(232, 17, 35);
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        text-align: center;
+        background-color: rgb(232, 17, 35);
+        user-select: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .dashboard .upload-game {
+        height: calc(100vh - 200px);
+        width: 70%;
+        background-color: rgb(201, 226, 230);
+        margin: 63px;
+        border-radius: 10px;
+        border: solid 2px rgb(0, 43, 61);
+        box-shadow: 4px 4px #323232;
+        overflow-y: hidden;
+        position: absolute;
+        z-index: 0;
+    }
+
+    .form-upload-a-game {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 260px);
+        overflow-y: auto;
+    }
+
+    .form-upload-a-game div {
+        flex: 1;
+        padding-left: 5px;
+        margin: 2px;
+    }
+
+    .dashboard .your-reviews {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 200px);
+        width: 70%;
+        background-color: rgb(201, 226, 230);
+        margin: 63px;
+        border-radius: 10px;
+        border: solid 2px rgb(0, 43, 61);
+        box-shadow: 4px 4px #323232;
+        overflow-y: hidden;
+        position: absolute;
+        z-index: 0;
+    }
+
+    .showProfileReviews {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        max-height: 535px;
+        padding-bottom: 5px;
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .folder {
+        position: absolute;
+        border: 2px solid rgb(0, 43, 61);
+        border-bottom: none;
+        background-color: rgb(201, 226, 230);
+        top: 106px;
+        display: flex;
+        justify-content: center;
+        width: 50px;
+        border-radius: 5px 5px 0 0;
+        left: 15%;
+        height: 32px;
+        user-select: none;
+    }
+
+    .folder:hover {
+        cursor: pointer;
+    }
+
+}
